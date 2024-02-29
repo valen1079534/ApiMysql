@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentacion de la API </title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    
+    <h1>Documentacion de la API</h1>
+    
+        <hr>
+
+        <h3>1. REQ Documentacion del Endpoint Usuario</h3>
+        <table>
+            <tr>
+                <td>Numero</td>
+                <td>1</td>
+            </tr>
+
+            <tr>
+                <td>Nombre del Endpoint</td>
+                <td>Listar usuario</td>
+            </tr>
+
+            <tr>
+                <td>URI</td>
+                <td>/usuario/listar</td>
+            </tr>
+                
+            <tr>
+                <td>DESCRIPCION</td>
+                <td>Permite listar los usuarios registrados en la base de datos</td>
+            </tr>
+            <tr>
+                <td>Verbo http</td>
+                <td>get</td>
+            </tr>
+
+            <tr>
+                <td>HEADER</td>
+                <td>NULL</td>
+            </tr>
+
+            <tr>
+                <td>USUARIOS</td>
+                <td>ADMINISTRADOR</td>
+            </tr>
+
+            <tr>
+                <td>PETICION BODY</td>
+                <td>{"nombre":"yo"}</td>
+            </tr>
+
+            <td>RESPUESTA JSON</td>
+            <td>
+                CORRECTO:
+                STATUS: 200
+                JSON
+                {
+                "idusuario": 25,
+                "nombres": "jose",
+                "direccion": "cra 2 No. 12-12",
+                "telefono": "321212121",
+                "correo": "pepito@gamil.com",
+                "rol": "usuario",
+                "password": "224"
+            }
+                INCORRECTO
+                STATUS: 404
+                BODY: {
+                    STATUS: 404
+                    MESSAGE: "NOSE REGISTRO"
+                }
+
+                ERROR:
+                STATUS: 500
+                BODY: JSON{
+                    STATUS: 500,
+                    MESSAGE: "ERROR EN EL SERVIDOR"
+                }
+        </td>
+        </table>
+
+
+</body>
+</html>
