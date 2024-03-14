@@ -2,6 +2,7 @@ import express  from "express";
 import body_parser from "body-parser";
 import router from "./src/routers/router.usuario.js";
 import rutaAutemnticacion from "./src/routers/router.autenticacion.js";
+import  juegoRuta  from "./src/routers/routerVideojuego.js";
 
 const servidor = express()
 
@@ -30,6 +31,7 @@ servidor.get('/document', (req, res)=>{
 
 servidor.use(rutaAutemnticacion)
 servidor.use('/usuarios', router)
+servidor.use('/juegos', juegoRuta)
 
 servidor.listen(5000, ()=>{
     console.log('Servidor Corriendo en el puerto 8000')

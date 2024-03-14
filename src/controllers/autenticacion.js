@@ -10,15 +10,11 @@ export const validar = async (req, res)=>{
 
     const [rows] = await pool.query(sql)
     
-    if(rows.length >0)
-    {
+    if(rows.length >0){
         let token = jwt.sign({rows}, process.env.AUT_SECRET, {expiresIn:process.env.AUT_EXPIRE})
-
         return res.status(200).json({'user':rows, 'token':token, 'mensaje':'se pudo :)'}); 
-    }  
 
-    else
-    {
+    } else{
         return res.status(400).json({'status':404, 'mensage':"usuario no autoirizado"})
     }
 
@@ -34,7 +30,7 @@ export const validarToken = async (req, res, next) =>{
 
     if(!tokenCliente){
         return res.status(404).json({ 'mensaje':'Token es requerido :('}); 
-    }else{
+    } else{
         const token = jwt.verify(tokenCliente, process.env.AUT_SECRET, (error, decode) => {
             if(error){
                 return res.status(404).json({ 'mensaje':'Token incorrecto :('}); 

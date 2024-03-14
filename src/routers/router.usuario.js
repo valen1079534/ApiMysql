@@ -11,8 +11,6 @@ router.get('/listar', validarToken,listarUsuarios)
 router.post('/registra',validarUsuario, registarUsuarios)
 
 
-
-
 /* router.put("/actualizar/:id", actualizarUsuario)
 router.get("/buscar/:id", buscarUsuarios)
 router.delete( "/eliminar/:id", eliminarUsuarios)  */
